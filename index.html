@@ -16,14 +16,14 @@
     
     <header class="header">
 
-        <a href="#" class="logo"> <i class="fas fa-tooth"></i> DENTISTA "RODRIGUEZ" </a>
+        <a href="#" class="logo"> <i class="fas fa-tooth"></i> DENTISTA "RODRÍGUEZ" </a>
         <nav class="navbar">
             <a href="#home">Inicio</a>
             <a href="#about">Nosotros</a>
             <a href="#services">Servicios</a>
             <a href="#team">Equipo</a>
             <a href="#pricing">Planes</a>
-            <a href="#blog">Informate</a>
+            <a href="#blog">Infórmate</a>
         </nav>
         <a href="pagina_calendario.html" class="btn">Agendar Cita</a>
         <div id="menu-btn" class="fas fa-bars"></div>
@@ -36,7 +36,7 @@
             <P>Explora nuestro sitio web para conocer más sobre los servicios que ofrecemos, 
             nuestro equipo de profesionales y nuestras instalaciones.
             ¡Esperamos tener la oportunidad de cuidar de tu salud bucal y ayudarte a alcanzar la sonrisa que siempre has deseado!</P>
-            <a href="#contact" class="btn">Contactanos</a>
+            <a href="#contact" class="btn">Contáctanos</a>
         </div>
 
 
@@ -45,7 +45,7 @@
 
     <section class="about" id="about">
 
-        <h1 class="heading"> ¿Quienes Somos? </h1>
+        <h1 class="heading"> ¿Quiénes Somos? </h1>
 
         <div class="row">
 
@@ -133,8 +133,8 @@
 
             <div class="box">
                 <img src="images/Brackets de Autoligado.png" alt="">
-                <h3>BRACKETS DE AUTOLIGADO</h3>
-                <p>Los brackets de autoligado son un tipo de brackets utilizados en ortodoncia que no requieren
+                <h3>BRACKETS DE AUTO LIGADO</h3>
+                <p>Los brackets de auto ligado son un tipo de brackets utilizados en ortodoncia que no requieren
                     ligaduras elásticas para mantener el arco en su lugar. En su lugar, 
                     tienen un mecanismo de cierre integrado que sujeta el arco metálico. </p>
             </div>
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <div class="content">
-                        <h3>Victor Rodriguez</h3>
+                        <h3>Victor Rodríguez</h3>
                         <span>Dentista</span>
                     </div>
                 </div>
@@ -215,15 +215,15 @@
         <div class="box-container">
 
             <div class="box">
-                <h3 class="title">Basico</h3>
+                <h3 class="title">Básico</h3>
                 <div class="price">
                     <span class="currency">$</span>
                     <span class="amount">200</span>
                     <span class="duration"> /Mes</span>
                 </div>
                 <ul>
-                    <li> <i class="fas fa-times"></i> Alineacion</li>
-                    <li> <i class="fas fa-check"></i> Inspeccion de Cavidades</li>
+                    <li> <i class="fas fa-times"></i> Alineación</li>
+                    <li> <i class="fas fa-check"></i> Inspección de Cavidades</li>
                     <li> <i class="fas fa-times"></i> Odontologia Cosmetica</li>
                     <li> <i class="fas fa-times"></i> Blanqueamiento Dental</li>
                 </ul>
@@ -237,8 +237,8 @@
                     <span class="duration"> /Mes</span>
                 </div>
                 <ul>
-                    <li> <i class="fas fa-check"></i> Alineacion</li>
-                    <li> <i class="fas fa-check"></i> Inspeccion de Cavidades</li>
+                    <li> <i class="fas fa-check"></i> Alineación</li>
+                    <li> <i class="fas fa-check"></i> Inspección de Cavidades</li>
                     <li> <i class="fas fa-times"></i> Odontologia Cosmetica</li>
                     <li> <i class="fas fa-times"></i> Blanqueamiento Dental</li>
                 </ul>
@@ -252,8 +252,8 @@
                     <span class="duration"> /Mes</span>
                 </div>
                 <ul>
-                    <li> <i class="fas fa-check"></i> Alineacion</li>
-                    <li> <i class="fas fa-check"></i> Inspeccion de Cavidades</li>
+                    <li> <i class="fas fa-check"></i> Alineación</li>
+                    <li> <i class="fas fa-check"></i> Inspección de Cavidades</li>
                     <li> <i class="fas fa-check"></i> Odontologia Cosmetica</li>
                     <li> <i class="fas fa-check"></i> Blanqueamiento Dental</li>
                     <li> <i class="fas fa-check"></i> Revicion Semanal</li>
@@ -266,7 +266,7 @@
 
     <section class="blog" id="blog">
 
-        <h1 class="heading">Aprende mas</h1>
+        <h1 class="heading">Aprende más</h1>
 
         <div class="box-container">
 
@@ -333,26 +333,28 @@
     <section class="contact" id="contact">
 
         <h1 class="heading">Ponte en Contacto con Nosotros</h1>
-
-        <form action="">
-
+    
+        <form action="enviar_formulario.php" method="post">
+    
             <span>Tu nombre:</span>
             <div class="inputBox">
-                <input type="text" placeholder="Primer Nombre">
-                <input type="text" placeholder="Segundo Nombre">
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="text" name="apellido" placeholder="Apellido">
             </div>
-
+    
             <span>Tu email:</span>
-            <input type="email" placeholder="Ingresa tu email" class="box">
-
+            <input type="email" name="email" placeholder="Ingresa tu email" class="box">
+    
             <span>Numero de Contacto:</span>
-            <input type="number" placeholder="Ingresa tu numero" class="box">
-
-            <input type="submit" value="ENVIAR" class="btn">
-
+            <input type="tel" name="telefono" placeholder="Ingresa tu número" class="box">
+    
+            <a href="#home" class="btn">ENVIAR</a>
         </form>
-
+        <?php if(isset($_GET['enviado']) && $_GET['enviado'] == 'si'): ?>
+        <p class="mensaje">¡El formulario se ha enviado correctamente!</p>
+    <?php endif; ?>
     </section>
+    
 
 
 <section class="Mapa">
@@ -374,8 +376,8 @@
         <div class="box-container">
 
             <div class="box">
-                <h3>Direccion</h3>
-                <p>Felipe Villanueva mz 14 lt 2 C-2 Héroes tecamac secc sexta 55764, Méx.</p>
+                <h3>Dirección</h3>
+                <p>Felipe Villanueva mz 14 lt 2 C-2 Héroes Tecámac secc sexta 55764, Méx.</p>
                 <div class="share">
                     <a href="#" class="fab fa-facebook-f"></a>
                     <a href="#" class="fab fa-instagram"></a>
